@@ -1,7 +1,15 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import "./App.css";
+
 function App() {
   return (
     <>
-      <h2 className="text-4xl text-red-900 underline">hello </h2>
+      <Navbar />
+
+      <Outlet />
+
+      <footer>This footer</footer>
     </>
   );
 }
