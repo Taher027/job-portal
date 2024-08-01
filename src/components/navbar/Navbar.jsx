@@ -42,13 +42,13 @@ const Navbar = () => {
           <div className="text-base font-medium space-x-5 hidden lg:block">
             <Link
               to="/login"
-              className="py-2 px-5 border rounded-md font-semibold bg-btnPrimaryColor text-white hover:bg-hover  transition-all"
+              className="py-2 px-5 border rounded-md font-semibold bg-btnPrimaryColor text-white transition-colors duration-300 hover:bg-hover   "
             >
               Login
             </Link>
             <Link
-              to="/login"
-              className="py-2 px-5 border rounded-md font-semibold bg-btnPrimaryColor text-white hover:bg-hover  transition-all"
+              to="/sign-up"
+              className="py-2 px-5 border rounded-md font-semibold bg-btnPrimaryColor text-white transition-colors duration-300 hover:bg-hover  "
             >
               Sign up
             </Link>
