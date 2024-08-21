@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { JobIcon } from "../../utils";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import Container from "../Container/Container";
+import Button from "../Button/Button";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleToggleMenu = () => {
@@ -18,19 +19,26 @@ const Navbar = () => {
   return (
     <header>
       <Container>
-        <nav className="flex justify-between items-center py-6">
+        <nav className="flex justify-between items-center py-5">
           <Link to={"/"} className="flex items-center gap-2 text-2xl  ">
             <JobIcon width={30} height={30} />
-            <span>Job Portal</span>
+            <span className="font-semibold text-primaryColor">JobFusion</span>
           </Link>
           {/* nav item for large device */}
           <ul className="hidden md:flex gap-12">
             {navItems?.map(({ path, title }) => (
-              <li key={path} className="text-base text-primary font-semibold">
+              <li
+                key={path}
+                className="text-base text-secondaryColor font-semibold"
+              >
                 <NavLink
                   to={path}
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-primaryColor font-semibold"
+                      : ""
                   }
                 >
                   {title}
@@ -40,17 +48,11 @@ const Navbar = () => {
           </ul>
           {/* sign up and login button  */}
           <div className="text-base font-medium space-x-5 hidden lg:block">
-            <Link
-              to="/login"
-              className="py-2 px-5 border rounded-md font-semibold bg-btnPrimaryColor text-white transition-colors duration-300 hover:bg-hover   "
-            >
-              Login
+            <Link to="/login">
+              <Button label="Login" />
             </Link>
-            <Link
-              to="/sign-up"
-              className="py-2 px-5 border rounded-md font-semibold bg-btnPrimaryColor text-white transition-colors duration-300 hover:bg-hover  "
-            >
-              Sign up
+            <Link to="/sign-up">
+              <Button label="Sign up" />
             </Link>
           </div>
 
@@ -58,9 +60,9 @@ const Navbar = () => {
           <div className="block md:hidden transition-all duration-75">
             <button onClick={handleToggleMenu}>
               {isMenuOpen ? (
-                <FaXmark className=" w-5 h-5 text-primary " />
+                <FaXmark className=" w-5 h-5 text-secondaryColor " />
               ) : (
-                <FaBarsStaggered className=" w-5 h-5 text-primary " />
+                <FaBarsStaggered className=" w-5 h-5 text-secondaryColor " />
               )}
             </button>
           </div>
@@ -80,7 +82,11 @@ const Navbar = () => {
                 <NavLink
                   to={path}
                   className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-primaryColor font-semibold"
+                      : ""
                   }
                 >
                   {title}

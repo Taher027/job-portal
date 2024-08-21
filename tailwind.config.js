@@ -7,10 +7,10 @@ export default {
         "banner-bg": "url(src/assets/bg.png)",
       },
       colors: {
-        primary: "#363636",
-        btnPrimaryColor: "#1967d2",
+        primaryColor: "#1967d2",
+        secondaryColor: "#363636",
 
-        hover: "#0146a6",
+        btnHoverBg: "#0146a6",
       },
     },
   },
