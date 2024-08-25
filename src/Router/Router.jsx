@@ -1,9 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../Pages/Home/Home";
-import MySalary from "../Pages/MySalary/MySalary";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import FindWork from "../Pages/FindWork/FindWork";
+import FindTalent from "../Pages/FindTalent/FindTalent";
+import Enterprice from "../Pages/Enterprice/Enterprice";
+import SelectRole from "../components/SelectRole/SelectRole";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +18,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/salary",
-        element: <MySalary />,
+        path: "/find-work",
+        element: <FindWork />,
+      },
+      {
+        path: "/find-talent",
+        element: <FindTalent />,
+      },
+      {
+        path: "/enterprice",
+        element: <Enterprice />,
       },
     ],
   },
@@ -25,7 +36,11 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/sign-up",
+    path: "/select-role",
+    element: <SelectRole />,
+  },
+  {
+    path: "/signup",
     element: <SignUp />,
   },
 ]);

@@ -1,16 +1,18 @@
 // import { Outlet } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
 import "./App.css";
 import { Outlet } from "react-router-dom";
+import Navbar from "./components/Shared/Navbar/Navbar";
+import Footer from "./components/Shared/Footer/Footer";
 
 function App() {
   return (
     <>
       <Navbar />
 
-      <Outlet />
-
-      <footer>This footer</footer>
+      <div className="min-h-[calc(100vh-80px)]">
+        <Outlet />
+      </div>
+      <Footer />
     </>
   );
 }

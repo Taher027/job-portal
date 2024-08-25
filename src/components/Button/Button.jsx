@@ -1,10 +1,18 @@
-function Button({ label, onClick, disabled, notRoundedStart }) {
+function Button({ label, onClick, disabled, notRoundedStart, type, width }) {
+  console.log(disabled);
   return (
     <button
       disabled={disabled}
+      type={type}
       onClick={onClick}
-      className={` bg-primaryColor text-white py-2 px-5 font-medium rounded  transition-colors duration-300 hover:bg-btnHoverBg
+      className={`   whitespace-nowrap  py-2 px-5 font-medium rounded  transition-all duration-200 
         ${notRoundedStart ? "md:rounded-s-none" : "rounded-md"}
+        ${width ? "w-full" : ""}
+        ${
+          disabled
+            ? "bg-gray-200 text-primaryColor cursor-not-allowed"
+            : "bg-primaryColor hover:bg-btnHoverBg text-white "
+        }
         
         
         
@@ -16,7 +24,3 @@ function Button({ label, onClick, disabled, notRoundedStart }) {
 }
 
 export default Button;
-//  border rounded-md font-semibold bg-btnPrimaryColor text-white transition-colors
-//  duration-300 hover:bg-hover
-
-// md:rounded-s-none rounded-e-md

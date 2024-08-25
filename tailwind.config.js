@@ -11,6 +11,7 @@ export default {
         secondaryColor: "#363636",
 
         btnHoverBg: "#0146a6",
+        hoverBg: "#E5ECFA",
       },
     },
   },

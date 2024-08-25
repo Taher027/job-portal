@@ -5,25 +5,26 @@ import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
   const {
-    jobTitle,
+    title,
     companyName,
     minPrice,
     maxPrice,
     salaryType,
-    jobLocation,
+    location,
     postingDate,
     experienceLevel,
     employmentType,
     description,
+    tags,
   } = data;
   return (
-    <div className="border border-gray-200 bg-white rounded-md ">
+    <div className="border border-gray-200 bg-white rounded-md cursor-pointer transition-colors duration-300 hover:bg-hoverBg">
       <div className="p-5">
-        <h3 className="text-2xl text-primary font-semibold mb-2">{jobTitle}</h3>
+        <h4 className="text-2xl text-primary font-semibold mb-2">{title}</h4>
         <strong className="text-base text-gray-400  ">{companyName}</strong>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 items-center mt-4 mb-3">
           <span className="text-base text-gray-400">
-            <CiLocationOn /> {jobLocation}
+            <CiLocationOn /> {location}
           </span>
           <span className="text-base text-gray-400">
             <IoTimeOutline /> {employmentType}
@@ -35,7 +36,7 @@ const Card = ({ data }) => {
             <IoCalendarClearOutline /> {postingDate}
           </span>
         </div>
-        <p className="text-base text-primary  text-justify">{description}</p>
+        <p className="text-base   text-justify">{description}</p>
         <div className="flex justify-start gap-10 mt-3">
           <p className="text-gray-400 font-semiBold ">
             Salary Type: {salaryType}
@@ -44,10 +45,20 @@ const Card = ({ data }) => {
             Experienced Level: {experienceLevel}
           </p>
         </div>
+        <div className="flex space-x-2 overflow-x-auto ">
+          {tags?.map((tag, index) => (
+            <span
+              key={index}
+              className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold whitespace-nowrap text-gray-700"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
         <div className="mt-5 ">
           <Link
             to="/"
-            className="py-2 px-3 border rounded-md font-normal text-sm bg-btnPrimaryColor text-white  transition-colors duration-300 hover:bg-hover  "
+            className="py-2 px-3 border rounded-md font-normal text-sm bg-primaryColor text-white  transition-colors duration-300 hover:bg-hover  "
           >
             Read More
           </Link>
